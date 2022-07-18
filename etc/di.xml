@@ -1,0 +1,9 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference 
+        for="CB\Helloworld\Api\Data\PostInterface" 
+        type="CB\Helloworld\Model\Post" />
+    <preference 
+        for="CB\Helloworld\Api\PostRepositoryInterface" 
+        type="CB\Helloworld\Model\PostRepository" />
+
+</config>

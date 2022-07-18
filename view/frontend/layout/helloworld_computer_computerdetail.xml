@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main">
+            <container name="helloworld.extra" htmlTag="h1" htmlId="computer-header" >
+                <block name="helloworld.extra.heading" template="CB_Helloworld::computer/heading.phtml" />
+            </container>
+            <block name="helloworld.computer.detail" template="CB_Helloworld::computer/detail.phtml" />
+        </referenceContainer>
+        <referenceContainer name="sidebar.additional">
+            <block name="helloworld.computer.sidebar" template="CB_Helloworld::computer/side-bar.phtml" />
+        </referenceContainer>
+        <referenceBlock name="wishlist_sidebar" template="CB_Helloworld::wishlist/sidebar.phtml" />
+        <move 
+            element="wishlist_sidebar" 
+            destination="sidebar.additional" 
+            before="catalog.compare.sidebar" />
+        <!--Will not display the campare block in sidebar -->
+        <!-- <referenceBlock name="catalog.compare.sidebar" display="false" /> -->
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+
+    </body>
+</page>

@@ -1,0 +1,68 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="CB\VirtualDemo\Model\Greetings">
+        <arguments>
+            <argument name="greetingMessage" xsi:type="string">Called from Helloworld Module</argument>
+        </arguments>
+    </type>
+    <type name="CB\Information\Controller\Index\UserInfo">
+        <arguments>
+            <!-- Array type Arugment -->
+            <argument name="pageHeading" xsi:type="string">Welcome to Helloworld Portal</argument>
+            <argument name="employeesData" xsi:type="array">
+                <item name="first_name" xsi:type="string">John</item>
+                <item name="last_name" xsi:type="string">Doe</item>
+                <item name="address" xsi:type="array">
+                    <item name="city" xsi:type="string">Manhaton</item>
+                    <item name="state" xsi:type="string">USA</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+
+   <!--  <type name="CB\VirtualDemo\Model\Employee" >
+        <arguments>
+            <argument name="userList" xsi:type="array">
+                <item name="hr" xsi:type="array">
+                    <item name="fullName" xsi:type="string">Sushma Bhanopa</item>
+                    <item name="email" xsi:type="string">sushmabhanopa@gmail.com</item>
+                    <item name="contactNumber" xsi:type="string">9826012456</item>
+                </item>
+            </argument>
+        </arguments>
+    </type> -->
+    <!-- <preference for="CB\VirtualDemo\Model\Employee" type="CB\Helloworld\Model\Employee" /> -->
+
+    <!-- Virtual Type -->
+    <!-- <virtualType name="myEmployeeList" type="CB\VirtualDemo\Model\Employee" >
+        <arguments>
+            <argument name="userList" xsi:type="array">
+                <item name="hr" xsi:type="array">
+                    <item name="fullName" xsi:type="string">Sushma Bhanopa</item>
+                    <item name="email" xsi:type="string">sushmabhanopa@gmail.com</item>
+                    <item name="contactNumber" xsi:type="string">9826012456</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="CB\Helloworld\Model\Employee">
+        <arguments>
+            <argument name="userListData" xsi:type="object">myEmployeeList</argument>
+        </arguments>
+    </type> -->
+
+
+     <virtualType name="CB\Helloworld\Model\HEmployee" type="CB\VirtualDemo\Model\Employee">
+        <arguments>
+            <argument name="userList" xsi:type="array">
+                <item name="hr" xsi:type="array">
+                    <item name="fullName" xsi:type="string">Chandan Bhanopa</item>
+                    <item name="email" xsi:type="string">sushmabhanopa@gmail.com</item>
+                    <item name="contactNumber" xsi:type="string">9826012456</item>
+                </item>
+            </argument>
+        </arguments>
+     </virtualType>
+
+</config>

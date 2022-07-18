@@ -1,0 +1,27 @@
+<div class="computer-add">
+	<h2><?=__('Add New Entry');?></h2>
+	<form method="POST" action="<?=$block->getUrl('helloworld/computer/save/');?>" id="add-computer-form">
+		<div class="control">
+			<label><?=__("Company")?></label>
+			<input type="text" name="company" class="input" data-validate="{required:true,message:'Enter company name'}" />	
+		</div>
+		<div class="control">
+			<label><?=__("Hard Disk")?></label>
+			<input type="text" name="hard_disk" class="input" data-validate="{required:true}" />	
+		</div>
+		<div class="control">
+			<button type="submit"><?=__('Create Record')?></button>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+require([
+    'jquery',
+    'mage/mage'
+], function($){
+
+   var dataForm = $('#add-computer-form');
+   dataForm.mage('validation', {});
+
+});
+</script>

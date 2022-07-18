@@ -1,0 +1,23 @@
+{
+    "cb_blog_post": {
+        "column": {
+            "id": true,
+            "title": true,
+            "content": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "cb_computers": {
+        "column": {
+            "id": true,
+            "company": true,
+            "hard_disk": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
