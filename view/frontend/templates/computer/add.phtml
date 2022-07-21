@@ -3,15 +3,15 @@
 	<form method="POST" action="<?=$block->getUrl('helloworld/computer/save/');?>" id="add-computer-form">
 		<div class="control">
 			<label><?=__("Company")?></label>
-			<input type="text" name="company" class="input" data-validate="{required:true,message:'Enter company name'}" />	
+			<input type="text" name="company" class="input" data-validate="{required:true}" data-msg-required="Required" />	
 		</div>
 		<div class="control">
 			<label><?=__("Hard Disk")?></label>
-			<input type="text" name="hard_disk" class="input" data-validate="{required:true}" />	
+			<input type="text" name="hard_disk" class="input" data-validate="{required:true}" 
+			data-msg-required="Required" />	
 		</div>
-		<div class="control">
-			<button type="submit"><?=__('Create Record')?></button>
-		</div>
+		<button type="submit"><?=__('Create Record')?></button>
+		
 	</form>
 </div>
 <script type="text/javascript">

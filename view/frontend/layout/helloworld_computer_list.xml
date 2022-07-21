@@ -8,7 +8,9 @@
             </action>
         </referenceBlock>
         <referenceContainer name="main">
-            <block name="helloworld.computer.list" template="CB_Helloworld::computer/list.phtml" />
+            <block 
+                class="CB\Helloworld\Block\Computer\ComputetList"
+                name="helloworld.computer.list" template="CB_Helloworld::computer/list.phtml" cacheable="false" />
         </referenceContainer>
     </body>
 </page>

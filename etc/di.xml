@@ -5,5 +5,11 @@
     <preference 
         for="CB\Helloworld\Api\PostRepositoryInterface" 
         type="CB\Helloworld\Model\PostRepository" />
+    <preference 
+        for="CB\Helloworld\Api\Data\ComputersInterface" 
+        type="CB\Helloworld\Model\Computers" />
+    <preference 
+        for="CB\Helloworld\Api\ComputersRepositoryInterface" 
+        type="CB\Helloworld\Model\ComputersRepository" />
 
 </config>

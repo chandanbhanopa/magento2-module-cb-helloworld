@@ -7,6 +7,6 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 class Collection extends AbstractCollection {
 	protected function _construct(){
-		$this->init(PostModel::class,PostResourceModel::clsss );
+		$this->_init(PostModel::class,PostResourceModel::class );
 	}
 }

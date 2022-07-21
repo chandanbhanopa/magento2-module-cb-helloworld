@@ -1,19 +1,21 @@
+<?php $computerCollection =  $block->getComputerListCollection(); ?>
 <div class="helloworld-computer-list">
 	<div class="add-new-section">
 		<a href="<?=$block->getUrl('helloworld/computer/add');?>">Create New Entry</a>
 	</div>
 	<div class="list-data">
 		<ul id="list">
-			<li><a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>1])?>">Dell</a></li>
-			<li><a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>2])?>">HP</a></li>
-			<li><a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>3])?>">Sony</a></li>
-			<li><a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>4])?>">Samesung</a></li>
+			<?php if($computerCollection->count()> 0 ): ?>
+				<?php foreach($computerCollection->getData() as $key=>$computer): ?>
+					<li>
+						<a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>1])?>"><?=$computer['company'];?></a>
+						<span class="conf"> | <?=$computer['hard_disk'];?></span>
+					</li>
+				<?php endforeach;?>
+			<?php endif; ?>
 		</ul>	
 		<div class="count">
-			<?=__("Total Computer Count is %1", 4);?>
+			<?=__("Total Computer Count is %1", $computerCollection->count() );?>
 		</div>		
 	</div>
-
-
-	
 </div>

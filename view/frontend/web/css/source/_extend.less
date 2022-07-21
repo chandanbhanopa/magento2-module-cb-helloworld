@@ -1,5 +1,41 @@
+@btn-bg-color:#eb5202;
+@btn-font-color:#ffffff;
+
 .helloworld-computer-list{
+	display: flex;
+	flex-direction: column;
+	.add-new-section a{
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+		background-color: @btn-bg-color;
+    	color: @btn-font-color;
+    	font-weight:600;
+    	padding: 11px;
+    	text-decoration: none;
+    	font-variant-caps: all-petite-caps;	
+    	font-size: 20px;
+	}
 	#list{
-		background-color:lightcyan;
+		display: flex;
+		flex-direction: column;
+		background-color:lightblue;
+	}
+
+}
+
+#add-computer-form{
+	.control{
+		label{
+			width: 20%;
+		}
+		display: flex;
+		flex-direction:row;
+		
+		width: 100%;
+		padding-bottom:15px;
+	}
+	.input{
+		width: 50%;
 	}
 }
