@@ -6,7 +6,7 @@ use Magento\Framework\DataObject;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class Post implements ArgumentInterface{
-
+	
 	public function getList(){
 		return [
 			new DataObject(['id'=>1, 'title'=>"Blog Post one"]),

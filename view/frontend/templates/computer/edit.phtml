@@ -1,0 +1,31 @@
+<?php
+$computerVm = $block->getData('computer');
+$computerData = $computerVm->getComputersDetail();
+?>
+<div class="computer-add">
+	<form method="POST" action="<?=$block->getUrl('helloworld/computer/save/');?>" id="add-computer-form">
+		<input type="hidden" name="id" value="<?=$computerData->getId();?>" />
+		<div class="control">
+			<label><?=__("Company")?></label>
+			<input type="text" name="company" class="input" data-validate="{required:true}" value="<?=$computerData->getCompany();?>" data-msg-required="Required" />	
+		</div>
+		<div class="control">
+			<label><?=__("Hard Disk")?></label>
+			<input type="text" name="hard_disk" value="<?=$computerData->getHardDisk();?>" class="input" data-validate="{required:true}" 
+			data-msg-required="Required" />	
+		</div>
+		<button type="submit"><?=__('Create Record')?></button>
+		
+	</form>
+</div>
+<script type="text/javascript">
+require([
+    'jquery',
+    'mage/mage'
+], function($){
+
+   var dataForm = $('#add-computer-form');
+   dataForm.mage('validation', {});
+
+});
+</script>

@@ -8,4 +8,12 @@
             <resource ref="anonymous" />
         </resources>
     </route>
+    <!--Get Computer Details -->
+    <route url ="/V1/computers/:id/" method="GET">
+    	<service class="CB\Helloworld\Api\ComputersRepositoryInterface" method="getById" />
+    	<resources>
+    		<resource ref="anonymous" />
+    	</resources>
+    </route>
+
 </routes>

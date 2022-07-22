@@ -7,10 +7,19 @@
 		<ul id="list">
 			<?php if($computerCollection->count()> 0 ): ?>
 				<?php foreach($computerCollection->getData() as $key=>$computer): ?>
-					<li>
-						<a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>1])?>"><?=$computer['company'];?></a>
-						<span class="conf"> | <?=$computer['hard_disk'];?></span>
-					</li>
+					<?php if($computer !== '') : ?>
+						<li class="computer-items">
+							<span>
+								<a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>$computer['id']])?>"><?=$computer['company'];?></a>
+								<span class="conf"> | <?=$computer['hard_disk'];?></span>
+							</span>
+							<span class="action">
+								<a class="button green" href="<?=$block->getUrl('helloworld/computer/edit',['id'=>$computer['id']]);?>"><?=__("Edit")?></a> 
+								<a class="button red" href="<?=$block->getUrl('helloworld/computer/delete',['id'=>$computer['id']]);?>"><?=__("Delete")?></a>
+							</span>
+							
+						</li>
+					<?php endif; ?>
 				<?php endforeach;?>
 			<?php endif; ?>
 		</ul>	

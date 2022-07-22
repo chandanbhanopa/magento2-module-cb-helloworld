@@ -5,7 +5,11 @@
             <container name="helloworld.extra" htmlTag="h1" htmlId="computer-header" >
                 <block name="helloworld.extra.heading" template="CB_Helloworld::computer/heading.phtml" />
             </container>
-            <block name="helloworld.computer.detail" template="CB_Helloworld::computer/detail.phtml" />
+            <block name="helloworld.computer.detail" template="CB_Helloworld::computer/detail.phtml" >
+                <arguments>
+                    <argument name="computer" xsi:type="object">CB\Helloworld\ViewModel\Computers</argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <referenceContainer name="sidebar.additional">
             <block name="helloworld.computer.sidebar" template="CB_Helloworld::computer/side-bar.phtml" />

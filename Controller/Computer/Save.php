@@ -54,9 +54,14 @@ class Save implements HttpPostActionInterface {
 		$post =  $this->request->isPost();
        	if($post) {
 			$postData = $this->request->getPostValue();
+			$computers = $this->computersFactory->create();
+
+			if(isset($postData['id'])){
+				$computers = $computers->load($postData['id']);
+			}
 			$companyName = $postData['company'];
 			$hardDisk = $postData['hard_disk'];
-			$computers = $this->computersFactory->create();
+			
 			$computers->setCompany($companyName);
 			$computers->setHardDisk($hardDisk);
 			try{

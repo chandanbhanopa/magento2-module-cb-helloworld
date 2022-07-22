@@ -25,7 +25,7 @@ interface ComputersRepositoryInterface {
 	/**
 	 * getById
 	 * @param  int $id
-	 * @return ComputersInterface
+	 * @return CB\Helloworld\Api\Data\ComputersInterface
 	 */
 	public function getById(int $id);
 

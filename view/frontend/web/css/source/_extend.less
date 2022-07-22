@@ -1,6 +1,22 @@
 @btn-bg-color:#eb5202;
 @btn-font-color:#ffffff;
 
+.green {background-color: #4CAF50;} /* Green */
+.blue {background-color: #008CBA;} /* Blue */
+.red {background-color: #f44336;} /* Red */
+.gray {background-color: #e7e7e7; color: black;} /* Gray */
+.black {background-color: #555555;} /* Black */
+
+.button{
+	border:none;
+	color:#ffffff!important;
+	padding:2px 19px!important;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size:16px
+}
+
 .helloworld-computer-list{
 	display: flex;
 	flex-direction: column;
@@ -20,10 +36,15 @@
 		display: flex;
 		flex-direction: column;
 		background-color:lightblue;
+		li{
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		
 	}
 
 }
-
 #add-computer-form{
 	.control{
 		label{
@@ -37,5 +58,8 @@
 	}
 	.input{
 		width: 50%;
+
 	}
 }
+
+
