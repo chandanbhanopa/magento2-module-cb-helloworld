@@ -47,6 +47,12 @@ class ComputersRepository implements ComputersRepositoryInterface {
 	 * @return bool
 	 */
 	public function deleteById($id){
+		$computer = $this->computersFactory->create();
+		$this->computerResourceModel->load($computer, $id);
+		if(!$computer->getId()){
+			throw new NoSuchEntityException(__('The record %1 doesn\'t not exist', $id));
+		}
+		$this->computerResourceModel->delete($computer);
 
 	}
 }

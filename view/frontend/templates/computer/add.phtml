@@ -1,5 +1,7 @@
 <div class="computer-add">
-	<h2><?=__('Add New Entry');?></h2>
+	<div class="add-new-section">
+			<a href="<?=$block->getUrl('helloworld/computer/list');?>"><?=__('All Computers');?></a>
+		</div>
 	<form method="POST" action="<?=$block->getUrl('helloworld/computer/save/');?>" id="add-computer-form">
 		<div class="control">
 			<label><?=__("Company")?></label>

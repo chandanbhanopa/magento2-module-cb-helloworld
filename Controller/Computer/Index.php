@@ -18,7 +18,7 @@ class Index implements HttpGetActionInterface {
 	}
 	public function execute(){
 		//echo "Computer index page";
-		//$redirect = $this->	->create();
+		//$redirect = $this->redirectFactory->create();
 		//return $redirect->setPath('helloworld/computer/list');
 		return $this->pageFactory->create();	
 	}
