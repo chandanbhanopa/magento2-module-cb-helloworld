@@ -16,4 +16,12 @@
     	</resources>
     </route>
 
+    <!-- Delete the Entry -->
+    <route url="/V1/computers/delete/:id" method="GET">
+    	<service class="CB\Helloworld\Api\ComputersRepositoryInterface" method="deleteById" />
+    	<resources>
+    		<resource ref="anonymous" />	
+    	</resources>
+    </route>
+
 </routes>
