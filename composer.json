@@ -1,5 +1,5 @@
 {
-    "name": "cb/helloworld",
+    "name": "chandanbhanopa/magento2-module-cb-helloworld",
     "description": "Hello world extension",
     "type": "magento2-module",
     "license": [
@@ -7,11 +7,11 @@
         "AFL-3.0"
     ],
     "version": "1.5.0.0",
-    "minimum-stability":"stable",
+    "minimum-stability":"dev",
     "autoload": {
         "files": [ "registration.php" ],
         "psr-4": {
             "CB\\Helloworld\\": ""
         }
-    } 
+    }
 }
