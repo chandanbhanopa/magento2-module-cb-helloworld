@@ -36,41 +36,6 @@ It is used to imporve the API managment so that third party developers can easil
 * Create CRUD operation with form and validation in customer section
 * Create ALL apis for third party developers
 
-### Documentation
-
- - [How to Install SMTP Magento 2 Extension](https://www.magepal.com/help/docs/smtp-magento/?utm_source=smtp&utm_medium=github#installation)
-
-- [How to setup Magento 2 SMTP Extension](https://www.magepal.com/help/docs/smtp-magento/?utm_source=smtp&utm_medium=github#configuration)
-
-- [How to debugging Magento 2 SMTP Extension](https://www.magepal.com/help/docs/smtp-magento/?utm_source=smtp&utm_medium=github#debug)
-
-
-### SMTP Service Providers
- * Gmail
- * Google App
- * G Suite
- * Amazon Simple Email Service (SES)
- * Microsoft Office365
- * Outlook
- * SparkPost
- * GoDaddy
- * Mandrill
- * MailGun
- * SendGrid
- * Elastic Email
- * Hotmail
- * AOL Mail
- * Yahoo Mail
- * AT&T
- * Verizon
- * Postmark
- * O2 Mail
- * Zoho
- * Mailjet
- * Mail.com
- * Your Company SMTP Server
- * and many other SMTP servers
-
 ### How to Install Magento Helloworld module
 
 ##### Using Composer (recommended)
