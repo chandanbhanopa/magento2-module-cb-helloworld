@@ -36,5 +36,11 @@ interface ComputersRepositoryInterface {
 	 */
 	public function deleteById(int $id);
 
+	/**
+	 * getList
+	 * @return CB\Helloworld\Api\Data\ComputersInterface[]
+	 */
+	public function getList();
+
 }
 

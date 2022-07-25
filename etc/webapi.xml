@@ -24,4 +24,11 @@
     	</resources>
     </route>
 
+    <route url="/V1/computers/list" method="GET">
+    	<service class="CB\Helloworld\Api\ComputersRepositoryInterface" method="getList" />
+    	<resources>
+    		<resource ref="anonymous" />
+    	</resources>
+    </route>
+
 </routes>

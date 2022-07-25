@@ -5,6 +5,8 @@ use CB\Helloworld\Api\ComputersRepositoryInterface;
 use CB\Helloworld\Api\Data\ComputersInterface;
 use CB\Helloworld\Model\ComputersFactory;
 use CB\Helloworld\Model\ResourceModel\Computers as ComputersResourceModel;
+use CB\Helloworld\Model\ResourceModel\Computers\CollectionFactory as ComputersCollection;
+
 
 class ComputersRepository implements ComputersRepositoryInterface {
 
@@ -12,10 +14,14 @@ class ComputersRepository implements ComputersRepositoryInterface {
 
 	private $computerResourceModel;
 
-	public function __construct(ComputersFactory $computersFactory, ComputersResourceModel $computerResourceModel){
+	private $computerCollectionFactory;
+
+	public function __construct(ComputersFactory $computersFactory, ComputersResourceModel $computerResourceModel, ComputersCollection $computerCollectionFactory){
 		$this->computersFactory = $computersFactory;
 		$this->computerResourceModel = $computerResourceModel;
+		$this->computerCollectionFactory = $computerCollectionFactory;
 	}
+
 	/**
 	 * save
 	 * @param  ComputersInterface $computers
@@ -54,5 +60,14 @@ class ComputersRepository implements ComputersRepositoryInterface {
 		}
 		$this->computerResourceModel->delete($computer);
 
+	}
+
+	/**
+	 * getList
+	 * @return CB\Helloworld\Api\Data\ComputersInterface[]
+	 */
+	public function getList(){
+		return $this->computerCollectionFactory->create()->getItems(); 
+		
 	}
 }

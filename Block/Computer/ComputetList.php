@@ -4,9 +4,10 @@ namespace CB\Helloworld\Block\Computer;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use CB\Helloworld\Model\ResourceModel\Computers\CollectionFactory as ComputersCollectionFactory;
+use CB\Helloworld\Api\ComputersRepositoryInterface;
 
 
-class ComputetList extends Template
+class ComputetList extends Template 
 {
 	/**
 	 * $computerCollectionFactory
@@ -15,11 +16,18 @@ class ComputetList extends Template
 	private $computersCollectionFactory;
 
 	/**
+	 * $computerRepository
+	 * @var CB\Helloworld\Api\ComputersRepositoryInterface
+	 */
+	private $computerRepository;
+
+	/**
 	 * __construct 
 	 * @param Context                    $context                   [description]
 	 * @param ComputersCollectionFactory $computerCollectionFactory [description]
 	 */
-	public function __construct(Context $context, ComputersCollectionFactory $computersCollectionFactory) {
+	public function __construct(Context $context, ComputersCollectionFactory $computersCollectionFactory, ComputersRepositoryInterface $computerRepository) {
+		$this->computerRepository = $computerRepository;
 		$this->computersCollectionFactory = $computersCollectionFactory;
 		parent::__construct($context);
     }
@@ -29,6 +37,11 @@ class ComputetList extends Template
      * @return array
      */
     public function getComputerListCollection(){
-    	return $this->computersCollectionFactory->create();
+    	/**
+    	 * Loading data from repository
+    	 */
+    	return $this->computerRepository->getList();
+    	
+    	//return $this->computersCollectionFactory->create();
     }
 }

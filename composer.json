@@ -6,7 +6,7 @@
         "OSL-3.0",
         "AFL-3.0"
     ],
-    "version": "1.4.0.0",
+    "version": "1.2.0.0",
     "minimum-stability":"stable",
     "autoload": {
         "files": [ "registration.php" ],

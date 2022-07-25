@@ -5,26 +5,24 @@
 	</div>
 	<div class="list-data">
 		<ul id="list">
-			<?php if($computerCollection->count()> 0 ): ?>
-				<?php foreach($computerCollection->getData() as $key=>$computer): ?>
-					<?php if($computer !== '') : ?>
-						<li class="computer-items">
-							<span>
-								<a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>$computer['id']])?>"><?=$computer['company'];?></a>
-								<span class="conf"> | <?=$computer['hard_disk'];?></span>
-							</span>
-							<span class="action">
-								<a class="button green" href="<?=$block->getUrl('helloworld/computer/edit',['id'=>$computer['id']]);?>"><?=__("Edit")?></a> 
-								<a class="button red" href="<?=$block->getUrl('helloworld/computer/delete',['id'=>$computer['id']]);?>"><?=__("Delete")?></a>
-							</span>
-							
-						</li>
-					<?php endif; ?>
-				<?php endforeach;?>
-			<?php endif; ?>
+			<?php foreach($computerCollection as $key=>$computer): ?>
+				<?php if($computer !== '') : ?>
+					<li class="computer-items">
+						<span>
+							<a href="<?=$block->getUrl('helloworld/computer/computerdetail',['id'=>$computer['id']])?>"><?=$computer['company'];?></a>
+							<span class="conf"> | <?=$computer['hard_disk'];?></span>
+						</span>
+						<span class="action">
+							<a class="button green" href="<?=$block->getUrl('helloworld/computer/edit',['id'=>$computer['id']]);?>"><?=__("Edit")?></a> 
+							<a class="button red" href="<?=$block->getUrl('helloworld/computer/delete',['id'=>$computer['id']]);?>"><?=__("Delete")?></a>
+						</span>
+						
+					</li>
+				<?php endif; ?>
+			<?php endforeach;?>
 		</ul>	
 		<div class="count">
-			<?=__("Total Computer Count is %1", $computerCollection->count() );?>
+			<?=__("Total Computer Count is %1", count($computerCollection));?>
 		</div>		
 	</div>
 </div>
