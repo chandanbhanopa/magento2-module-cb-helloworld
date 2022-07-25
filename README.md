@@ -41,7 +41,7 @@ It is used to imporve the API managment so that third party developers can easil
 ##### Using Composer (recommended)
 
 ```sh
-composer require cb/helloworld
+composer require chandanbhanopa/magento2-module-cb-helloworld
 ```
 
 Contribution
